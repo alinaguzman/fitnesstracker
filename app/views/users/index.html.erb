@@ -12,7 +12,8 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name.capitalize %></td>
-        <td><%= link_to 'See Activities', user %></td>
+        <td><a href="/users/<%= user.id %>/activities">Activities</a>
+        </td>
       </tr>
     <% end %>
   </tbody>

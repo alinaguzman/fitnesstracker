@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<h2>d</h2>
 
 <h1>Listing Activities</h1>
 
@@ -19,10 +18,18 @@
         <td><%= activity.length %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
 
-<a href="/track">Track</a>
+  </tbody>
+
+
+</table>
+<tr>Total miles: <%= @miles %></tr>
+
+
+<br>
+<%= link_to "Track Your Fitness!",
+            :controller => "activities",
+            :action => "track" %>
 
 <br>
 

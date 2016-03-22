@@ -1,8 +1,9 @@
 
 var gps = {
 
-  calcDistance: function(original_lat,original_lng) {
-    var r = 16093.4/111300   // 6 miles
+  calcDistance: function(miles, original_lat, original_lng) {
+    var meters = miles * 1609.344;
+    var r = meters/111300
       , y0 = original_lat
       , x0 = original_lng
       , u = Math.random()
@@ -12,23 +13,22 @@ var gps = {
       , x = w * Math.cos(t)
       , y1 = w * Math.sin(t)
       , x1 = x / Math.cos(y0)
-    console.log(r)
 
-    newY = y0 + y1
-    newX = x0 + x1
+    newY = y0 + y1;
+    newX = x0 + x1;
+    coordinates = {lat: newY, lng: newX};
 
-    console.log(newY +"," + newX)
-
+    return coordinates
   },
 
-  showMap: function(location1, location2) {
-  var chicago = {lat: 41.85, lng: -87.65};
-  var indianapolis = {lat: 39.79, lng: -86.14};
+  showMap: function() {
+  var empireStateBuilding = {lat: 40.7484405, lng: -73.9856644};
+  var destination = gps.calcDistance(11, 40.7484405,-73.9856644);
 
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: chicago,
+    center: empireStateBuilding,
     scrollwheel: false,
-    zoom: 7
+    zoom: 10
   });
 
   var directionsDisplay = new google.maps.DirectionsRenderer({
@@ -37,8 +37,8 @@ var gps = {
 
   // Set destination, origin and travel mode.
   var request = {
-    destination: indianapolis,
-    origin: chicago,
+    destination: destination,
+    origin: empireStateBuilding,
     travelMode: google.maps.TravelMode.DRIVING
   };
 
@@ -55,7 +55,4 @@ var gps = {
 };
 
 (function() {
-
-
-  gps.calcDistance(40.678178,-73.944158);
 })();
