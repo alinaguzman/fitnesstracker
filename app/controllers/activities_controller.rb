@@ -29,6 +29,7 @@ class ActivitiesController < ApplicationController
   end
 
   def track
+    @miles
   end
 
   private
