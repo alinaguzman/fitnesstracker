@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  user_id: 1
+  length: 1.5
+
+two:
+  type: 
+  user_id: 1
+  length: 1.5

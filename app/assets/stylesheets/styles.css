@@ -1,0 +1,97 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Lato;
+}
+
+p, h1, h2 {
+    text-align: center;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+
+ /*NAVBAR */
+
+#navbar {
+    height: 50px;
+    width: 100%;
+    background-color: #000;
+    display: inline;
+    text-align: center;
+    position: fixed;
+    top: 0;
+}
+
+#navbar li {
+    list-style: none;
+    display: inline;
+    position: relative;
+}
+
+#navbar li:before {
+    content: " | ";
+    color: #666;
+    padding: 20px;
+}
+
+
+#navbar li:first-child:before {
+    content: none;
+}
+
+#navbar a {
+    padding-top: 15px;
+    text-decoration: none;
+    font-size: 1em;
+    color: #999;
+    font-family: Lato;
+}
+
+#navbar a:hover {
+    color: #f66666;
+    border-bottom: 2px solid #f66666;
+}
+
+ /*HEADER IMAGE SECTION */
+
+#bgimage {
+    background-image: url('IMG_6498.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 -105px 0;;
+    width: 100%;
+    height: 94vh;
+    background-size: 100% auto;
+}
+
+.overlay {
+    height: 94vh;
+    background: rgba(233,233,233,0.5);
+}
+
+
+
+.title {
+    padding: 200px;
+}
+
+/* TRACK SECTION */
+
+#track {
+    height: 580px;
+    background-color: #e9e9e9;
+    padding-top: 8px;
+}
