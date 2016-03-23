@@ -29,6 +29,9 @@ class ActivitiesController < ApplicationController
   end
 
   def track
+    @miles = params[:miles]
+    puts @miles
+    puts "up here?"
     @miles
   end
 

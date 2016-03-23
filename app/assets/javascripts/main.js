@@ -22,18 +22,20 @@ var gps = {
   },
 
   showMap: function() {
-  var empireStateBuilding = {lat: 40.7484405, lng: -73.9856644};
-  var destination = gps.calcDistance(11, 40.7484405,-73.9856644);
+    var miles = $("#map").data("miles");
+    console.log(miles)
+    var empireStateBuilding = {lat: 40.7484405, lng: -73.9856644};
+    var destination = gps.calcDistance(miles, 40.7484405,-73.9856644);
 
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: empireStateBuilding,
-    scrollwheel: false,
-    zoom: 10
-  });
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: empireStateBuilding,
+      scrollwheel: false,
+      zoom: 10
+    });
 
-  var directionsDisplay = new google.maps.DirectionsRenderer({
-    map: map
-  });
+    var directionsDisplay = new google.maps.DirectionsRenderer({
+      map: map
+    });
 
   // Set destination, origin and travel mode.
   var request = {
@@ -53,6 +55,3 @@ var gps = {
 }
 
 };
-
-(function() {
-})();

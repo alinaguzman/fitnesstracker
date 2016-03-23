@@ -4,15 +4,15 @@
     height: 300px;
   }
   #map {
-    height: 500px;
+    height: 400px;
     width: 100%;
   }
 </style>
 <body>
 
-<p>You're combined fitness activity was equivalent to driving from point A to B.</p>
+<p>You're combined fitness activity of <%= @miles %> miles was equivalent to driving from point A to B.</p>
 
-<div id="map"></div>
+<div id="map" data-miles="<%= @miles %>"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpZRx8EZifeUhcyW6Yne_M5tWuAthDZ_I&callback=gps.showMap"
         async defer></script>
